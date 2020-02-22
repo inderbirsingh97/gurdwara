@@ -1,0 +1,61 @@
+@font-face {
+  src: url(/fonts/WebAkharThick.ttf);
+  font-family: gurbani;
+}
+
+@font-face {
+  src: url(/fonts/AxeHandel.ttf);
+  font-family: axe;
+}
+
+body {
+  background-color: #8cb8fe21;
+  background-image: url(/imgs/bg.png);
+}
+
+.bg-gkmrhk {
+  background-color: #3884ff;
+}
+
+.navbar-brand {
+  font-family: "axe";
+  font-size: 3.5em;
+}
+
+.welcome {
+  font-family: "Anton";
+  font-size: 2.25em;
+}
+
+.nav-link {
+  color: #3884ffa1 !important;
+  font-family: "Anton";
+  font-size: 1.5em;
+}
+
+.active,
+.nav-link:hover,
+.active:hover,
+.navbar-brand,
+.text-primary {
+  color: #3884ff !important;
+}
+
+.cssgrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 1rem;
+}
+
+/* .gurb {
+  font-family: gurbani;
+  color: #3884ff;
+} */
+
+/* .carousel-inner {
+  border-radius: 1rem;
+} */
+
+/* .nav-link:hover, .active:hover {
+    color: #2579ff !important;
+} */
