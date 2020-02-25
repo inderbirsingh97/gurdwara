@@ -47,6 +47,16 @@ body {
   grid-gap: 1rem;
 }
 
+.cssgrid2 {
+  display: grid;
+  grid-template-columns: 3fr 1fr 1fr 1fr 1fr 3fr;
+}
+
+.facebook, .soundcloud, .instagram, .youtube {
+  font-size: 2.5rem;
+  color: #fff !important;
+}
+
 /* .gurb {
   font-family: gurbani;
   color: #3884ff;
