@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta name="robots" content="noindex" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Anton&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css"
+    />
+
+    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" href="/imgs/logo.png" />
+    <title>GKMRHK</title>
+  </head>
+  <body>
+    <nav id="navigation" class="navbar navbar-expand-md navbar-light">
+      <div class="container">
+        <a class="navbar-brand" href="/index.html">
+          <img src="/imgs/logo.png" height="80px" alt="logo" />GKMRHK
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarResponsive"
+          aria-controls="navbarResponsive"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="about.html">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="media.html">Media</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Resources</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="contact.html">Contact</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container my-3">
+      <div class="display-4 mt-2 mb-4 ml-4">
+        Gurdwara Khalsa Mero Roop Hai Khaas
+      </div>
+      <div class="lead ml-5">
+        5 West Way<br />
+        South Shields<br />
+        NE33 4SR
+      </div>
+      <div class="m-3">
+        <div class="col-md">
+          <div id="map-canvas" class="mb-4 rounded"></div>
+        </div>
+      </div>
+      <div class="mt-5 ml-4">
+        <div class="lead">
+          If you have any queries, please do not hesitate to contact us
+          GKMRHK.<br />
+          Please contact Karnail Singh on
+          <a href="tel:07801 431855">07801 431855</a>.
+        </div>
+      </div>
+    </div>
+
+    <footer class="bg-gkmrhk mt-5">
+      <div class="container">
+        <div class="cssgrid2 py-5">
+          <div class="empty"></div>
+          <div class="facebook">
+            <a
+              href="https://www.facebook.com/GKMRHKSS/"
+              class="facebook"
+              target="_blank"
+              ><i class="fab fa-facebook"></i
+            ></a>
+          </div>
+          <div class="instagram">
+            <a
+              href="https://www.instagram.com/gkmrhk/"
+              class="instagram"
+              target="_blank"
+              ><i class="fab fa-instagram"></i
+            ></a>
+          </div>
+          <div class="soundcloud">
+            <a
+              href="https://soundcloud.com/gkmrhk"
+              class="soundcloud"
+              target="_blank"
+              ><i class="fab fa-soundcloud"></i
+            ></a>
+          </div>
+          <div class="youtube">
+            <a
+              href="https://www.youtube.com/user/GKMRHK"
+              class="youtube"
+              target="_blank"
+              ><i class="fab fa-youtube"></i
+            ></a>
+          </div>
+          <div class="empty"></div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <script src="//maps.googleapis.com/maps/api/js?sensor=false"></script>
+
+    <script>
+      // define variables
+
+      var gmarkers1 = [];
+      var markers1 = [];
+      var infowindow = new google.maps.InfoWindow({
+        content: ""
+      });
+
+      // markers
+      markers1 = [
+        [
+          "0",
+          "Gurdwara Khalsa Mero Roop Hai Khaas",
+          54.97913,
+          -1.437573,
+          "South Shields",
+          "https://lh5.googleusercontent.com/p/AF1QipPf9ap5Zkw92FCU1BTiFlMMOGF-vyEIUjxlNaKM=w203-h156-k-no"
+        ]
+      ];
+
+      // init map
+
+      function initialise() {
+        var center = new google.maps.LatLng(54.97913, -1.437573);
+        var mapOptions = {
+          zoom: 17,
+          center: center,
+          mapTypeId: google.maps.MapTypeId.SATELLITE
+        };
+
+        map = new google.maps.Map(
+          document.getElementById("map-canvas"),
+          mapOptions
+        );
+        for (i = 0; i < markers1.length; i++) {
+          addMarker(markers1[i]);
+        }
+      }
+
+      // add marker to map
+
+      function addMarker(marker) {
+        var title = marker[1];
+        var pos = new google.maps.LatLng(marker[2], marker[3]);
+        var location = marker[4];
+        var image = marker[5];
+
+        marker1 = new google.maps.Marker({
+          title: title,
+          position: pos,
+          location: location,
+          map: map,
+          image: image
+        });
+      }
+
+      // Init map and properties
+      initialise();
+    </script>
+  </body>
+</html>
