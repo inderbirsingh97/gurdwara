@@ -8,9 +8,9 @@
   font-family: axe;
 }
 
-body {
-  background-color: #8cb8fe21;
-  background-image: url(/imgs/bg.png);
+body, .rssapp-list-container {
+  /* background-color: #8cb8fe21; */
+  background-image: url(/imgs/bg.png) !important;
 }
 
 .bg-gkmrhk {
@@ -58,6 +58,11 @@ body {
   color: #fff !important;
 }
 
+.list-group-item .facebook, .list-group-item .soundcloud, .list-group-item .instagram, .list-group-item .youtube {
+  font-size: 2rem;
+  color: #000000 !important;
+  text-decoration: none;
+}
 
 #map-canvas {
   width: 100%;
@@ -76,4 +81,8 @@ max-width:100%;
 .display-6 {
 font-size: 1.4rem;
 font-weight: 450;
+}
+
+.list-group-item {
+  background-color: transparent !important;
 }
